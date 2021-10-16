@@ -1,0 +1,82 @@
+#include <stdio.h>
+void DS(int ed,int sd)
+{
+	while(ed>0)
+	{
+		if(sd==1)
+		{
+			if(ed==1)
+			{
+				printf("I");
+				ed--;
+			}
+		if(ed==4)
+			{
+				printf("IV");
+				ed=ed-5;
+			}
+		}
+	if(sd==2)
+		{
+			if(ed==1)
+			{
+				printf("X");
+				ed--;
+			}
+		if(ed==5)
+			{
+				printf("L");
+				ed=ed-5;
+			}
+		}
+	if(sd==3)
+		{
+			if(ed==1)
+			{
+				printf("C");
+				ed--;
+			}
+		if(ed==5)
+			{
+				printf("D");
+				ed=ed-5;
+			}
+		}
+	if(sd==4)
+		{
+			if(ed==1)
+			{
+				printf("M");
+				ed--;
+			}
+		}
+	}
+}
+int main()
+{
+	int n,m,sd;
+	scanf("%d",&n);
+	m=n;
+	while(m>0)
+	{
+		sd++;
+		m/=10;
+	}
+	m=n;
+	int c=0;
+	while(m>0)
+	{
+		c=c+(m%10);
+		m/=10;
+	}
+	m=n;
+	int ed=0;
+	while(sd>0)
+	{
+		ed=sd%10;
+		sd/=10;
+		DS(ed,sd);
+		sd--;
+	}
+	return 0;
+}
